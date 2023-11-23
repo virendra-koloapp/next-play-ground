@@ -9,18 +9,17 @@ export default async function MixFeedPage({ params }) {
   const id = params.id;
 
   const feed = await getFeedById(id);
-  console.log(feed);
 
   return (
     <Container>
       <h1>{feed.title}</h1>
 
       {feed.items.map((item, index) => (
-        <Link scroll={true} key={index} href={`/post/${index}`}>
+        <Link key={index} href={`/post/${index}`}>
           <FeedItem>
-            <h3>
+            <small>
               {index}. {item.type} , {item?.id}
-            </h3>
+            </small>
             <hr />
             <Image
               src={
