@@ -15,7 +15,7 @@ export default async function MixFeedPage({ params }) {
       <h1>{feed.title}</h1>
 
       {feed.items.map((item, index) => (
-        <Link key={index} href={`/post/${index}`}>
+        <Link shallow key={index} href={`/post/${index}`}>
           <FeedItem>
             <small>
               {index}. {item.type} , {item?.id}
